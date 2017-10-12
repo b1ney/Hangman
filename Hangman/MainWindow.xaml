@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hangman"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="318" Width="493">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="imgHangman" Source="C:\Users\GAVTE15TsEr\Desktop\Hangman.jpg" Stretch="None" HorizontalAlignment="Left" Height="262" Margin="278,10,0,0" VerticalAlignment="Top" Width="197"/>
+        <Label x:Name="lblWord" Content="_ _ _ _ _ _ _ _ _" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" FontSize="20" Height="37" Width="120"/>
+        <TextBox x:Name="txtGuess" HorizontalAlignment="Left" Height="23" Margin="14,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnGuess" Content="Guess" HorizontalAlignment="Left" Margin="81,124,0,0" VerticalAlignment="Top" Width="53" Height="22"/>
+        <Label x:Name="lblRem" Content="Remaining guesses: 11" HorizontalAlignment="Left" Margin="14,246,0,0" VerticalAlignment="Top"/>
+        <Label Content="The secret word:" HorizontalAlignment="Left" Margin="14,10,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
