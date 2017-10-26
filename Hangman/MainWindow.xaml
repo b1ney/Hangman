@@ -4,19 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hangman"
+        xmlns:vm="clr-namespace:Hangman.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="318" Width="493">
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="233*"/>
+            <ColumnDefinition Width="252*"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="imgHangman" Source="C:\Users\GAVTE15TsEr\Desktop\Hangman.jpg" Stretch="None" HorizontalAlignment="Left" Height="262" Margin="278,10,0,0" VerticalAlignment="Top" Width="197"/>
-        <Label x:Name="lblWord" Content="_ _ _ _ _ _ _ _ _" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" FontSize="20" Height="37" Width="120"/>
-        <TextBox x:Name="txtGuess" HorizontalAlignment="Left" Height="23" Margin="14,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnGuess" Content="Guess" HorizontalAlignment="Left" Margin="81,124,0,0" VerticalAlignment="Top" Width="53" Height="22"/>
-        <Label x:Name="lblRem" Content="Remaining guesses: 11" HorizontalAlignment="Left" Margin="14,246,0,0" VerticalAlignment="Top"/>
-        <Label Content="The secret word:" HorizontalAlignment="Left" Margin="14,10,0,0" VerticalAlignment="Top"/>
 
+        <StackPanel>
+            <Label Content="The secret word:"/>
+            <Label x:Name="lblWord" Content="{Binding Word}" FontSize="20"/>
+            <Label x:Name="lblGuessed" Content="{Binding Guessed}" FontSize="20"/>
+            <TextBox x:Name="txtGuess" TextWrapping="Wrap" Margin="10" Text="{Binding Input, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button x:Name="btnGuess" Content="Guess" Command="{Binding GuessCommand}"/>
+            <Label x:Name="lblRem" Content="{Binding RemainingGuesses}"/>
+        </StackPanel>
+
+        <Image x:Name="imgHangman" Source="Assets\Images\default.jpg" Stretch="None" Grid.Column="1"/>
     </Grid>
 </Window>

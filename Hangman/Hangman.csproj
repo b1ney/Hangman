@@ -54,6 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Game.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,6 +96,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\1.jpg" />
+    <Resource Include="Assets\Images\10.jpg" />
+    <Resource Include="Assets\Images\11.jpg" />
+    <Resource Include="Assets\Images\2.jpg" />
+    <Resource Include="Assets\Images\3.jpg" />
+    <Resource Include="Assets\Images\4.jpg" />
+    <Resource Include="Assets\Images\5.jpg" />
+    <Resource Include="Assets\Images\6.jpg" />
+    <Resource Include="Assets\Images\7.jpg" />
+    <Resource Include="Assets\Images\8.jpg" />
+    <Resource Include="Assets\Images\9.jpg" />
+    <Resource Include="Assets\Images\default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\words.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
